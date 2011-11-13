@@ -60,16 +60,16 @@ function Get-Batchfile ($file) {
     }
 }
 
-function VsVars32()
+function VsVars($bat)
 {
     $comntools = (Get-ChildItem env:VS100COMNTOOLS).Value
-    $batchFile = [System.IO.Path]::Combine($comntools, "vsvars32.bat")
+    $batchFile = Join-Path $comntools $bat
     Get-Batchfile $BatchFile
     
     [System.Console]::Title = "Visual Studio 2010 Windows PowerShell"
 }
 
-VsVars32
+VsVars "vsvars32.bat"
 
 $Processor = Get-WmiObject Win32_Processor | where {$_.DeviceID -eq "CPU0"} | select AddressWidth
 $win64 = $Processor.AddressWidth -eq 64
