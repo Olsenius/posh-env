@@ -12,7 +12,7 @@ Feel free to [fork it](https://github.com/thedersen/posh-env/fork) and add your 
 
 Installing
 ----------
-1. Verify you have .NET 4.0 installed.
+1. Verify you have .NET 4.0 installed (and either the 2008 or 2010 version of Team Explorer if you are going to use git-tfs).
 
 2. Verify you have PowerShell 2.0 or better with `$PSVersionTable.PSVersion`.
 
