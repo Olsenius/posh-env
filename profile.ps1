@@ -85,7 +85,3 @@ if($win64) {
 }
 
 $env:Path += ";" + $gitTfsPath + ";" + $curlPath + ";" + $nugetPath
-
-# Update NuGet to latest version
-Write-Host "Updating NuGet"
-nuget update -self
