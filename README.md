@@ -1,5 +1,12 @@
 posh-env
 ========
+This repo contains various command line stuff that I use:
+
+* [git-tfs](https://github.com/spraints/git-tfs)
+* [posh-git](https://github.com/dahlbyk/posh-git)
+* [curl](http://curl.haxx.se/)
+* [pscx](http://pscx.codeplex.com/)
+* [NuGet](http://nuget.org)
 
 Installing
 ----------
