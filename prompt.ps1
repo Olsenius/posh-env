@@ -2,7 +2,7 @@
 function prompt {
     $realLASTEXITCODE = $LASTEXITCODE
 
-	Write-Host
+    Write-Host
 	
     # Reset color, which can be messed up by Enable-GitColors
     $Host.UI.RawUI.ForegroundColor = $GitPromptSettings.DefaultForegroundColor
@@ -13,7 +13,7 @@ function prompt {
     $Global:GitStatus = Get-GitStatus
     Write-GitStatus $GitStatus
 
-	Write-Host
+    Write-Host
     $LASTEXITCODE = $realLASTEXITCODE
     return "PS> "
 }
