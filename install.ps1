@@ -45,14 +45,14 @@ function Get-FileEncoding($Path) {
 
 $profileLine = ". '$installDir\profile.ps1'"
 
-Write-Host "Adding posh-git to profile..."
+Write-Host "Adding posh-env to profile..."
 @"
 
-# Load posh-git example profile
+# Load posh-env profile
 $profileLine
 
 "@ | Out-File $PROFILE -WhatIf:$WhatIf -Encoding (Get-FileEncoding $PROFILE)
 
-Write-Host 'posh-git sucessfully installed!'
+Write-Host 'posh-env sucessfully installed!'
 Write-Host 'Please reload your profile for the changes to take effect:'
 Write-Host '    . $PROFILE'
