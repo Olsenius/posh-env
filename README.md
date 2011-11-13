@@ -22,7 +22,7 @@ Installing
 
 5. Clone the posh-env repository to your local machine.
 
-6. Edit the `git-config.psm1`.
+6. Edit the `git-config.ps1`.
 
 7. From the posh-env repository directory, run `.\install.ps1`.
 
