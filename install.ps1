@@ -41,10 +41,6 @@ function Get-FileEncoding($Path) {
 }
 
 $profileLine = ". '$installDir\profile.ps1'"
-if(Select-String -Path $PROFILE -Pattern $profileLine -Quiet -SimpleMatch) {
-    Write-Host "It seems posh-git is already installed..."
-    return
-}
 
 Write-Host "Adding posh-git to profile..."
 @"
@@ -52,7 +48,7 @@ Write-Host "Adding posh-git to profile..."
 # Load posh-git example profile
 $profileLine
 
-"@ | Out-File $PROFILE -Append -WhatIf:$WhatIf -Encoding (Get-FileEncoding $PROFILE)
+"@ | Out-File $PROFILE -WhatIf:$WhatIf -Encoding (Get-FileEncoding $PROFILE)
 
 Write-Host 'posh-git sucessfully installed!'
 Write-Host 'Please reload your profile for the changes to take effect:'

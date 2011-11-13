@@ -9,11 +9,6 @@ Import-Module .\posh-git\posh-git
 # Load git configuration settings module
 Import-Module .\git-config
 
-# If module is installed in a default location ($env:PSModulePath),
-# use this instead (see about_Modules for more information):
-# Import-Module posh-git
-
-
 # Set up a simple prompt, adding the git prompt parts inside git repos
 function prompt {
     $realLASTEXITCODE = $LASTEXITCODE
