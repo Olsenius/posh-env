@@ -11,6 +11,6 @@ Import-Module .\vs-vars
 
 Enable-GitColors
 Start-SshAgent -Quiet
-Set-VsVars "vsvars32.bat"
+Set-VsVars
 
 Pop-Location

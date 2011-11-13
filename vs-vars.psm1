@@ -1,4 +1,4 @@
-function Set-VsVars($bat) {
+function Set-VsVars($bat = "vsvars32.bat") {
     $comntools = (Get-ChildItem env:VS100COMNTOOLS).Value
     $batchFile = Join-Path $comntools $bat
     
