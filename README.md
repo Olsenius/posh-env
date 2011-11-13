@@ -8,6 +8,8 @@ This repo contains various command line stuff that I use when working on a Windo
 * [pscx](http://pscx.codeplex.com/)
 * [NuGet](http://nuget.org)
 
+Feel free to [fork it](https://github.com/thedersen/posh-env/fork) and add your own stuff.
+
 Installing
 ----------
 1. Verify you have .NET 4.0 installed.
