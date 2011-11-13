@@ -71,8 +71,15 @@ function VsVars32()
 
 VsVars32
 
+$Processor = Get-WmiObject Win32_Processor | where {$_.DeviceID -eq "CPU0"} | select AddressWidth
+$win64 = $Processor.AddressWidth -eq 64
 
 # Update the path variable
 $currentDir = Split-Path $MyInvocation.MyCommand.Path -Parent
 $gitTfsPath = Join-Path $currentDir "git-tfs\GitTfs\bin\Debug"
-$env:Path += ";" + $gitTfsPath
+$curlPath = Join-Path $currentDir "curl\win32"
+if($win64) {
+    $curlPath = Join-Path $currentDir "curl\win64"
+}
+
+$env:Path += ";" + $gitTfsPath + ";" + $curlPath
