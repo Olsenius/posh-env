@@ -10,14 +10,17 @@ if(!(Get-Command git -ErrorAction SilentlyContinue)) {
     return
 }
 
-Write-Host "Updating git submodules"
-git submodule init
-git submodule update
-
 $installDir = Split-Path $MyInvocation.MyCommand.Path -Parent
 if(!(. (Join-Path $installDir "posh-git\CheckVersion.ps1"))) {
     return
 }
+
+Write-Host "Updating git submodules"
+git submodule init
+git submodule update
+
+Write-Host "Building git-tfs"
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe .\git-tfs\GitTfs.sln /p:Configuration=Vs2010_Debug
 
 if(!(Test-Path $PROFILE)) {
     Write-Host "Creating PowerShell profile...`n$PROFILE"

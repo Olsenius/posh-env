@@ -70,3 +70,9 @@ function VsVars32()
 }
 
 VsVars32
+
+
+# Update the path variable
+$currentDir = Split-Path $MyInvocation.MyCommand.Path -Parent
+$gitTfsPath = Join-Path $currentDir "git-tfs\GitTfs\bin\Debug"
+$env:Path += ";" + $gitTfsPath
