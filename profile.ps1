@@ -76,10 +76,16 @@ $win64 = $Processor.AddressWidth -eq 64
 
 # Update the path variable
 $currentDir = Split-Path $MyInvocation.MyCommand.Path -Parent
+
+$nugetPath = Join-Path $currentDir "nuget"
 $gitTfsPath = Join-Path $currentDir "git-tfs\GitTfs\bin\Debug"
 $curlPath = Join-Path $currentDir "curl\win32"
 if($win64) {
     $curlPath = Join-Path $currentDir "curl\win64"
 }
 
-$env:Path += ";" + $gitTfsPath + ";" + $curlPath
+$env:Path += ";" + $gitTfsPath + ";" + $curlPath + ";" + $nugetPath
+
+# Update NuGet to latest version
+Write-Host "Updating NuGet"
+nuget update -self
