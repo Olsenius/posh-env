@@ -1,8 +1,14 @@
-$nugetPath = Join-Path Get-Location "nuget"
-$gitTfsPath = Join-Path Get-Location "git-tfs\GitTfs\bin\Debug"
-$curlPath = Join-Path Get-Location "curl\win32"
-if(Test-Win64 -eq $true) {
-    $curlPath = Join-Path Get-Location "curl\win64"
+function Update-RelativePath($childPath) {
+    $path = Get-Location | Join-Path -ChildPath $childPath
+    $env:Path += ";" + $path	
 }
 
-$env:Path += ";" + $gitTfsPath + ";" + $curlPath + ";" + $nugetPath
+if(Test-Win64 -eq $true) {
+    Update-RelativePath("curl\win64")
+}
+else {
+	Update-RelativePath("curl\win32")
+}
+
+Update-RelativePath("nuget")
+Update-RelativePath("git-tfs\GitTfs\bin\Debug")
