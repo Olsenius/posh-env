@@ -11,4 +11,5 @@ else {
 }
 
 Update-RelativePath("nuget")
+Update-RelativePath("nodejs")
 Update-RelativePath("git-tfs\GitTfs\bin\Debug")
