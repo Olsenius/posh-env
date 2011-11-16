@@ -1,5 +1,7 @@
 param([switch]$WhatIf = $false)
 
+Import-Module .\utilities
+
 Write-Host "Updating git submodules"
 git submodule init
 git submodule update
