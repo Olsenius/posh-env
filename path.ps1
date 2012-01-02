@@ -5,12 +5,12 @@ function Update-RelativePath($childPath) {
 
 if(Test-Win64 -eq $true) {
     Update-RelativePath("curl\win64"
-    Update-RelativePath("${env:ProgramFiles(x86)}\git\bin")
+    $env:Path += ";" +"${env:ProgramFiles(x86)}\git\bin"
 
 }
 else {
 	Update-RelativePath("curl\win32")
-        Update-RelativePath("${env:ProgramFiles}\git\bin")
+        $env:Path += ";" +"${env:ProgramFiles}\git\bin"
 }
 
 Update-RelativePath("nuget")
