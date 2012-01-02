@@ -1,6 +1,6 @@
 # User
-git config --global user.name thedersen
-git config --global user.email thedersen@gmail.com
+git config --global user.name Olsenius
+git config --global user.email andreas.olsen@gmail.com
 
 # Core
 git config --global --replace-all core.autocrlf false
